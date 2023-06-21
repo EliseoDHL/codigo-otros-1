@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="./assets/css/styles.css"> <!--Esta bien referenciado pero al inicio siempre es mejor agregar ./ para que lo reconozca como su hoja de estilos padre -->
     <title>APIs</title>
 </head>
 <body>
     <p class="name"></p>
     <p class="blog"></p>
+    <p class="location"></p><!--Se agrega location porque se encuentra dentro del JS pero no en el index-->
 
-  <script src="../assets/js/app.js"></script>
+  <script src="./assets/js/app.js"></script> <!--En el HTML, se encuentra referenciado el JS pero tiene un punto de mas ya que index no se encuentra dentro de alguna carpeta -->
 </body>
 </html>
