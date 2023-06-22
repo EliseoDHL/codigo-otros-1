@@ -33,7 +33,7 @@ body {
 
 
 /* Table Styles */
-
+/* 
 table {
   border-radius: 5px;
   overflow: hidden;
@@ -44,11 +44,11 @@ table {
 td, th {
   border: 1px solid var(--grey);
   padding: 0.5rem;
-}
+} */
 
 
 /* Helper Divs */
-
+/* 
 .wrapper {
   max-width: 1000px;
   margin: 4rem auto;
@@ -113,4 +113,4 @@ h6 {
 .wrapper h6 {
   color: var(--black);
   text-shadow: none;
-}
+} */

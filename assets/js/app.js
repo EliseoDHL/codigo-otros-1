@@ -4,20 +4,25 @@ const $n = document.querySelector('.name');//Se corrigio el querySelector, ya qu
 const $b = document.querySelector('.blog');
 const $l = document.querySelector('.location');
 
-function displayUser(username) {
+async function displayUser(username) { //Se coloca un async para que el await funcione correctamente
   $n.textContent = 'cargando...';
-  const data = fetch(`${usersEndpoint}/${username}`); //Se borro el await que estaba detras del fetch
-  console.log(data);
-  $n.textContent = `${data.name}`;//Se cambia la apostrofe por backticks porque las plantillas literales solo se activan con las backtick
-  $b.textContent = `${data.blog}`;
-  $l.textContent = `${data.location}`;
+  const data = await fetch(`${usersEndpoint}/${username}`)
+  .then(respuesta => respuesta.json())
+  .then(pintarDOM => {
+  console.log(pintarDOM);
+  $n.textContent = `${pintarDOM.name}`;//Se cambia la apostrofe por backticks porque las plantillas literales solo se activan con las backtick
+  $b.textContent = `${pintarDOM.blog}`;
+  $l.textContent = `${pintarDOM.location}`;
+})
+
+return data
 }
 
 function handleError(err) {
   console.log('OH NO!');
   console.log(err);
-  n.textContent = `Algo salió mal: ${err}`;
+  $n.textContent = `Algo salió mal: ${err}`;
 }
 
-// displayUser('stolinski').catch(handleError);
+//displayUser('stolinski').catch(handleError);
 displayUser('stolinski');
